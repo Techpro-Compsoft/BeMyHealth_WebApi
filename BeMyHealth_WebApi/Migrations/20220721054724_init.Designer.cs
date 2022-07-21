@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeMyHealth_WebApi.Migrations
 {
     [DbContext(typeof(BeMyHealthDbContext))]
-    [Migration("20220720120318_init")]
+    [Migration("20220721054724_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -107,6 +107,16 @@ namespace BeMyHealth_WebApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegisteredBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Subscription")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedDate")

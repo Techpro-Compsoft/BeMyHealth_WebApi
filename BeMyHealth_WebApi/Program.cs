@@ -25,6 +25,10 @@ var config = new MapperConfiguration(cfg =>
         .ForMember(dest => dest.EmailId, opt => opt.MapFrom(src => src.EmailId))
         .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
         .ForMember(dest => dest.ConfirmPassword, opt => opt.MapFrom(src => src.ConfirmPassword))
+        .ForMember(dest => dest.RoleId, opt => opt.MapFrom(src => src.RoleId))
+        .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
+        .ForMember(dest => dest.Subscription, opt => opt.MapFrom(src => src.Subscription))
+        .ForMember(dest => dest.RegisteredBy, opt => opt.MapFrom(src => src.RegisteredBy))
        .ReverseMap();
     cfg.CreateMap<CustomDietPlan, CustomDietPlanDto>()
         .ForMember(dest => dest.DietName, opt => opt.MapFrom(src => src.DietName))

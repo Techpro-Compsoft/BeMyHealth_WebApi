@@ -1,6 +1,7 @@
 ﻿using BeMyHealth_WebApi.Constants;
 using BeMyHealth_WebApi.ContextData;
 using BeMyHealth_WebApi.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -96,6 +97,17 @@ namespace BeMyHealth_WebApi.Services.UserService
 
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
             return jwt;
+        }
+        public async Task<User> GetUserListByRoleId(int Roleid)
+        {
+            var data = await _beMyHealthDbContext.Users.Where(x => x.UserId == x.RoleId).FirstOrDefaultAsync();
+            return data;
+        }
+
+        public async Task<List<User>> GetAllUserList()
+        {
+            var data = await _beMyHealthDbContext.Users.ToListAsync();
+            return data;
         }
     }
 }

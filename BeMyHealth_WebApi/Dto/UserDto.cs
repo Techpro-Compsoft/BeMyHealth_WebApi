@@ -9,5 +9,9 @@
         public string? EmailId { get; set; }
         public string? Password { get; set; }
         public string? ConfirmPassword { get; set; }
+        public int RoleId { get; set; }
+        public bool Status { get; set; }
+        public string Subscription { get; set; }
+        public string? RegisteredBy { get; set; }
     }
 }

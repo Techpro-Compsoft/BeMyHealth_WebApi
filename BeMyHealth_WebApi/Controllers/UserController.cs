@@ -54,5 +54,24 @@ namespace BeMyHealth_WebApi.Controllers
                 return Ok(ApiResponse.CreateResponse("User Not Found", StatusConstants.StatusCode400));
             }
         }
+        [HttpGet("GetAllUserList")]
+        public async Task<ActionResult<List<User>>> GetAllUserList()
+        {
+            var data = await _userService.GetAllUserList();
+            return data;
+        }
+
+        [HttpGet("GetUserListByRoleId")]
+        public async Task<ActionResult<User>> GetUserListByRoleId(int Roleid)
+        {
+            var data = await _userService.GetUserListByRoleId(Roleid);
+            if (data == null)
+            {
+                return Ok(data);
+
+            }
+            return BadRequest();
+
+        }
     }
 }

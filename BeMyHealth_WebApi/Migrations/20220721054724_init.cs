@@ -54,6 +54,9 @@ namespace BeMyHealth_WebApi.Migrations
                     MobileNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EmailId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RoleId = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    Subscription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RegisteredBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
