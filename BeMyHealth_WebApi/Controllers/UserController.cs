@@ -6,6 +6,7 @@ using BeMyHealth_WebApi.Helpers;
 using BeMyHealth_WebApi.Models;
 using BeMyHealth_WebApi.Services.SubscriptionService;
 using BeMyHealth_WebApi.Services.UserService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -54,13 +55,14 @@ namespace BeMyHealth_WebApi.Controllers
                 return Ok(ApiResponse.CreateResponse("User Not Found", StatusConstants.StatusCode400));
             }
         }
+        [Authorize]
         [HttpGet("GetAllUserList")]
         public async Task<ActionResult<List<User>>> GetAllUserList()
         {
             var data = await _userService.GetAllUserList();
             return data;
         }
-
+        [Authorize]
         [HttpGet("GetUserListByRoleId")]
         public async Task<ActionResult<User>> GetUserListByRoleId(int Roleid)
         {
