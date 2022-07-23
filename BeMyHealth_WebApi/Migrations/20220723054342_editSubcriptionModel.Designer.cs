@@ -4,6 +4,7 @@ using BeMyHealth_WebApi.ContextData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeMyHealth_WebApi.Migrations
 {
     [DbContext(typeof(BeMyHealthDbContext))]
-    partial class BeMyHealthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220723054342_editSubcriptionModel")]
+    partial class editSubcriptionModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
