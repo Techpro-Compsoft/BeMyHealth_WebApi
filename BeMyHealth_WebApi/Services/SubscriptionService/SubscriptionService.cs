@@ -36,7 +36,6 @@ namespace BeMyHealth_WebApi.Services.SubscriptionService
         }
 
         public async Task<bool> AddSubscription(CustomSubscription customSubscription)
-
         { 
             if(customSubscription != null)
             {

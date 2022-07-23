@@ -7,9 +7,9 @@ namespace BeMyHealth_WebApi.Models
         [Key]
         public int SubscriptionID { get; set; }
         public string? SubscriptionName { get; set; }
-        public bool Status { get; set; }
-        public DateTime Duration { get; set; } =DateTime.Now;
+        public string Duration { get; set; }
         public int Amount { get; set; }
-
+        public bool Status { get; set; }     
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
     }
 }
